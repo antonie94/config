@@ -1,0 +1,53 @@
+#Device Custom
+ device_tracker.antonie_antonie:
+    entity_picture: http://imagizer.imageshack.us/a/img924/2176/rqTVvy.jpg
+    friendly_name: AntonieIU
+ device_tracker.user_antonie:
+    entity_picture: http://imagizer.imageshack.us/a/img924/2176/rqTVvy.jpg
+    friendly_name: Raven
+#Sensor Custom
+ sensor.yr_symbol:
+    friendly_name: Today
+ sensor.weather_summary:
+    friendly_name: Summary
+    icon: mdi:weather-cloudy    
+ sensor.weather_temperature:
+    friendly_name: Temperature 
+    icon: mdi:thermometer
+ sensor.weather_wind_speed:
+    friendly_name: Wind Speed
+    icon: mdi:speedometer 
+ sensor.weather_humidity:
+    friendly_name: Humidity
+    icon: mdi:water-percent
+ sensor.weather_visibility:
+    friendly_name: Visibility
+    icon: mdi:binoculars
+
+ sensor.speedtest_download:
+    friendly_name: Download Speed
+    icon: mdi:arrow-down-bold-circle-outline 
+ sensor.speedtest_ping:
+    friendly_name: Ping
+    icon: mdi:google-circles-extended  
+ sensor.speedtest_upload:
+    friendly_name: Upload Speed
+    icon: mdi:arrow-up-bold-circle-outline   
+
+ sensor.downstair:
+    icon: mdi:security
+ sensor.upstair:
+    icon: mdi:security                
+#Switch Custom    
+ switch.kitchen:
+    friendly_name: Ventilator
+    icon: mdi:fan
+ switch.foutain:
+    friendly_name: Foutain
+    icon: mdi:pool
+
+
+
+ script.wakeup:
+    friendly_name: Wake Up
+    entity_picture: http://imagizer.imageshack.us/a/img924/8791/2s7RVC.jpg

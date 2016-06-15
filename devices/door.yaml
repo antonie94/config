@@ -1,0 +1,22 @@
+- platform: mqtt
+  name: "Garage Rollershutter"
+  command_topic: "control/set"
+  state_topic: "control/set"
+  qos: 0
+  payload_up: "120"
+  payload_down: "121"
+  #payload_stop: "STOP"
+  #value_template: '{{ value_json.test[8] }}'
+  #scan_interval: 10
+
+#- platform: mqtt
+#  name: "Entrance Door"
+  #state_topic: "control/state/foutain"
+# state_topic: "control/set"
+#  command_topic: "control/set"
+#  qos: 0
+#  payload_up: "118"
+#  payload_down: "119"
+  #payload_stop: "STOP"
+  #value_template: '{{ value_json.test[9] }}'
+  #scan_interval: 10

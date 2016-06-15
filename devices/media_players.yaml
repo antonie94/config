@@ -1,0 +1,6 @@
+- platform: kodi
+  host: http://192.168.0.8
+  port: 8080
+  name: Music Player
+  #user: kinglxag
+  #password: 123456

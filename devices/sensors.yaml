@@ -1,0 +1,60 @@
+# PIR Sensors
+- platform: mqtt
+  state_topic: "motion/state"
+  name: "Downstair"
+  qos: 0
+  payload_on: "1"
+  payload_off: "0"
+  value_template: '{% if value_json.pir[0] == 1 %}Motion Detected{% else %}Standby{% endif %}'
+
+- platform: mqtt
+  state_topic: "motion/state"
+  name: "Upstair"
+  qos: 0
+  payload_on: "1"
+  payload_off: "0"  
+  value_template: '{% if value_json.pir[1] == 1 %}Motion Detected{% else %}Standby{% endif %}'
+
+# Temperature Sensors     
+- platform: mqtt
+  state_topic: "temp/state"
+  name: "Temperature"
+  qos: 0    
+  unit_of_measurement: "°C"
+  value_template: '{{ value_json.temp[0]}}' 
+- platform: mqtt
+  state_topic: "temp/state"
+  name: "Temperature Room 1"
+  qos: 0
+  unit_of_measurement: "°C"
+  value_template: '{{ value_json.temp[0] }}'  
+- platform: mqtt
+  state_topic: "temp/state"
+  name: "Temperature Room 2"
+  qos: 0
+  unit_of_measurement: "°C"  
+  value_template: '{{ value_json.temp[0] }}'
+
+# Other Sensors
+- platform: time_date
+  display_options:
+    - "date_time"
+- platform: yr
+  monitored_conditions:
+    - symbol
+- platform: forecast
+  api_key: 487ed4b32bbb4c752d9bdf907847c5e2
+  monitored_conditions:
+    - temperature
+    - summary  
+    - wind_speed
+    - humidity
+    - visibility
+- platform: speedtest
+  minute:
+    - 0
+    - 5
+  monitored_conditions:
+    - ping
+    - download
+    - upload    

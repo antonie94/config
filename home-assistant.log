@@ -1,0 +1,70 @@
+16-06-15 10:53:18 homeassistant.bootstrap: Error during setup of component logger
+Traceback (most recent call last):
+  File "c:\users\antonie\appdata\local\programs\python\python36\lib\site-packages\homeassistant\bootstrap.py", line 106, in _setup_component
+    if not component.setup(hass, config):
+  File "c:\users\antonie\appdata\local\programs\python\python36\lib\site-packages\homeassistant\components\logger.py", line 66, in setup
+    for key, value in config.get(DOMAIN)[LOGGER_LOGS].items():
+AttributeError: 'NoneType' object has no attribute 'items'
+16-06-15 10:53:33 homeassistant.bootstrap: Error during setup of component notify
+Traceback (most recent call last):
+  File "c:\users\antonie\appdata\local\programs\python\python36\lib\site-packages\requests\packages\urllib3\connection.py", line 142, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "c:\users\antonie\appdata\local\programs\python\python36\lib\site-packages\requests\packages\urllib3\util\connection.py", line 67, in create_connection
+    for res in socket.getaddrinfo(host, port, 0, socket.SOCK_STREAM):
+  File "c:\users\antonie\appdata\local\programs\python\python36\lib\socket.py", line 732, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11004] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\antonie\appdata\local\programs\python\python36\lib\site-packages\requests\packages\urllib3\connectionpool.py", line 578, in urlopen
+    chunked=chunked)
+  File "c:\users\antonie\appdata\local\programs\python\python36\lib\site-packages\requests\packages\urllib3\connectionpool.py", line 351, in _make_request
+    self._validate_conn(conn)
+  File "c:\users\antonie\appdata\local\programs\python\python36\lib\site-packages\requests\packages\urllib3\connectionpool.py", line 814, in _validate_conn
+    conn.connect()
+  File "c:\users\antonie\appdata\local\programs\python\python36\lib\site-packages\requests\packages\urllib3\connection.py", line 254, in connect
+    conn = self._new_conn()
+  File "c:\users\antonie\appdata\local\programs\python\python36\lib\site-packages\requests\packages\urllib3\connection.py", line 151, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+requests.packages.urllib3.exceptions.NewConnectionError: <requests.packages.urllib3.connection.VerifiedHTTPSConnection object at 0x0000000004A49860>: Failed to establish a new connection: [Errno 11004] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\antonie\appdata\local\programs\python\python36\lib\site-packages\requests\adapters.py", line 403, in send
+    timeout=timeout
+  File "c:\users\antonie\appdata\local\programs\python\python36\lib\site-packages\requests\packages\urllib3\connectionpool.py", line 623, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "c:\users\antonie\appdata\local\programs\python\python36\lib\site-packages\requests\packages\urllib3\util\retry.py", line 281, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+requests.packages.urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.pushbullet.com', port=443): Max retries exceeded with url: /v2/devices (Caused by NewConnectionError('<requests.packages.urllib3.connection.VerifiedHTTPSConnection object at 0x0000000004A49860>: Failed to establish a new connection: [Errno 11004] getaddrinfo failed',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\antonie\appdata\local\programs\python\python36\lib\site-packages\homeassistant\bootstrap.py", line 106, in _setup_component
+    if not component.setup(hass, config):
+  File "c:\users\antonie\appdata\local\programs\python\python36\lib\site-packages\homeassistant\components\notify\__init__.py", line 62, in setup
+    notify_service = notify_implementation.get_service(hass, p_config)
+  File "c:\users\antonie\appdata\local\programs\python\python36\lib\site-packages\homeassistant\components\notify\pushbullet.py", line 30, in get_service
+    pushbullet = PushBullet(config[CONF_API_KEY])
+  File "C:\Users\Antonie\AppData\Roaming\.homeassistant\lib\pushbullet\pushbullet.py", line 29, in __init__
+    self.refresh()
+  File "C:\Users\Antonie\AppData\Roaming\.homeassistant\lib\pushbullet\pushbullet.py", line 278, in refresh
+    self._load_devices()
+  File "C:\Users\Antonie\AppData\Roaming\.homeassistant\lib\pushbullet\pushbullet.py", line 42, in _load_devices
+    resp_dict = self._get_data(self.DEVICES_URL)
+  File "C:\Users\Antonie\AppData\Roaming\.homeassistant\lib\pushbullet\pushbullet.py", line 32, in _get_data
+    resp = self._session.get(url)
+  File "c:\users\antonie\appdata\local\programs\python\python36\lib\site-packages\requests\sessions.py", line 487, in get
+    return self.request('GET', url, **kwargs)
+  File "c:\users\antonie\appdata\local\programs\python\python36\lib\site-packages\requests\sessions.py", line 475, in request
+    resp = self.send(prep, **send_kwargs)
+  File "c:\users\antonie\appdata\local\programs\python\python36\lib\site-packages\requests\sessions.py", line 585, in send
+    r = adapter.send(request, **kwargs)
+  File "c:\users\antonie\appdata\local\programs\python\python36\lib\site-packages\requests\adapters.py", line 467, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.pushbullet.com', port=443): Max retries exceeded with url: /v2/devices (Caused by NewConnectionError('<requests.packages.urllib3.connection.VerifiedHTTPSConnection object at 0x0000000004A49860>: Failed to establish a new connection: [Errno 11004] getaddrinfo failed',))
+16-06-15 10:55:10 homeassistant.bootstrap: Not initializing discovery because could not install dependency netdisco==0.5.4

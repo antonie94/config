@@ -1,0 +1,41 @@
+  #- platform: mqtt
+  #  name: "Entrance Door"
+  #  state_topic: "door/entrance"
+  #  command_topic: "door/entrance"
+  #  payload_on: "ON"
+  #  payload_off: "OFF"
+  #  optimistic: false
+  #- platform: mqtt
+  #  name: "Bedroom 1 Door"
+  #  state_topic: "door/bedroom1"
+   # command_topic: "door/bedroom1"
+  #  payload_on: "ON"
+   # payload_off: "OFF"
+   # optimistic: false
+  #- platform: mqtt
+  # name: "Bedroom 2 Door"
+   # state_topic: "door/bedroom2"
+  #  command_topic: "door/bedroom2"
+  #  payload_on: "ON"
+  #  payload_off: "OFF"
+  #  optimistic: false
+  - platform: mqtt
+    name: "Foutain"
+    command_topic: "control/set"
+    state_topic: "control/set"
+    #state_topic: "control/state/foutain"
+    payload_on: "106"
+    payload_off: "107"
+    optimistic: false
+    #scan_interval: 10
+    #value_template: '{{ value_json.test[0] }}'
+  - platform: mqtt
+    name: "Kitchen"
+    command_topic: "control/set"
+    state_topic: "control/set"
+    #state_topic: "control/state/foutain"
+    payload_on: "106"
+    payload_off: "107"
+    optimistic: false
+    #scan_interval: 10
+    #value_template: '{{ value_json.test[1] }}'

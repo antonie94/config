@@ -1,0 +1,84 @@
+homeassistant:
+  customize: !include customize.yaml
+  name: Cuong's Home
+  latitude: 10.823099
+  longitude: 106.629664
+  temperature_unit: C
+  time_zone: Asia/Ho_Chi_Minh
+
+
+mqtt:
+  #broker: m20.cloudmqtt.com
+  #port: 26611
+  #client_id: AntonieIU_EE
+  #keepalive: 60
+  #username: local
+  #password: 123456
+  broker: localhost
+  port: 1883
+  client_id: AntonieIU_EE
+  keepalive: 60
+
+http:
+  api_password: 123456
+
+zone:
+  name: University
+  latitude: 10.87808
+  longitude: 106.80166
+  radius: 250
+  icon: mdi:school
+
+
+zone 2:
+  name: Home
+  latitude: 10.79520
+  longitude: 106.69970
+  radius: 100
+  icon: mdi:home
+
+####################################################
+#                                                  #
+#                     Includes                     #
+#                                                  #
+####################################################
+
+# Devices # 
+device_tracker: !include devices/device_trackers.yaml
+light: !include devices/lights.yaml
+#media_player: !include devices/media_players.yaml
+sensor: !include devices/sensors.yaml
+switch: !include devices/switches.yaml
+automation: !include automation.yaml
+group: !include groups.yaml
+notify: !include notify.yaml
+#scene: !include scenes.yaml
+#script: !include scripts.yaml
+rollershutter: !include devices/door.yaml
+binary_sensor: !include devices/binary.yaml
+
+####################################################
+#                                                  #
+#                     Enables                      #
+#                                                  #
+####################################################  
+discovery:
+frontend:
+sun:
+script:
+logger:
+  logs:
+  default: warning
+
+camera:
+  platform: foscam
+  ip: 192.168.0.98
+  name: Main Camera
+  port: 88
+  username: kinglxag
+  password: cuong4394
+#camera:
+#  platform: generic
+#  still_image_url: http://192.168.0.70:88/cgi-bin/CGIProxy.fcgi?cmd=snapPicture2&usr=kinglxag&pwd=cuong4394
+#  name: my sample camera
+#  scan_interval: 5

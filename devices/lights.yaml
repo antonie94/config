@@ -1,0 +1,75 @@
+- platform: mqtt
+  name: "Living Room"
+  command_topic: "control/set"
+  state_topic: "control/set"
+  #state_topic: "control/state/foutain"
+  qos: 0
+  payload_on: "100"
+  payload_off: "101"
+  optimistic: false
+  #value_template: '{{ value_json.test[2] }}' 
+  #scan_interval: 10
+#- platform: mqtt
+#  name: "Kitchen"
+#  command_topic: "control/set"
+#  state_topic: "control/set"
+  #state_topic: "control/state/foutain"
+#  qos: 0
+#  payload_on: "106"
+#  payload_off: "107"
+#  optimistic: false
+  #value_template: '{{ value_json.test[3] }}'
+  #scan_interval: 10
+- platform: mqtt
+  name: "Bedroom 1"
+  command_topic: "control/set"
+  state_topic: "control/set"
+  #state_topic: "control/state/foutain"
+  qos: 0
+  payload_on: "102"
+  payload_off: "103"
+  optimistic: false
+  #value_template: '{{ value_json.test[4] }}'
+  #scan_interval: 10
+- platform: mqtt
+  name: "Bedroom 2"
+  command_topic: "control/set"
+  state_topic: "control/set"
+  #state_topic: "control/state/foutain"
+  qos: 0
+  payload_on: "108"
+  payload_off: "109"
+  optimistic: false
+  #value_template: '{{ value_json.test[5] }}'
+  #scan_interval: 10
+#- platform: mqtt
+#  name: "Garage"
+#  command_topic: "control/set"
+#  state_topic: "control/set"
+#  #state_topic: "control/state/foutain"
+#  qos: 0
+#  payload_on: "112"
+#  payload_off: "113"
+#  optimistic: false
+  #value_template: '{{ value_json.test[6] }}'
+  #scan_interval: 10
+- platform: mqtt
+  name: "Garden"
+  command_topic: "control/set"
+  state_topic: "control/set"
+  #state_topic: "control/state/foutain"
+  qos: 0
+  payload_on: "104"
+  payload_off: "105"
+  optimistic: false
+  #value_template: '{{ value_json.test[7] }}'
+  #scan_interval: 10
+- platform: mqtt
+  name: "Office"
+  command_topic: "control/set"
+  state_topic: "control/set"
+  #state_topic: "control/state/foutain"
+  qos: 0
+  payload_on: "112"
+  payload_off: "113"
+  optimistic: false

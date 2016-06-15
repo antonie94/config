@@ -1,0 +1,55 @@
+  Downstair:
+    view: yes
+    entities:
+      - group.living_room
+      - group.kitchen
+  Upstair:
+    view: yes
+    entities:
+      - group.bedroom1
+      - group.bedroom2
+      - group.rooftop
+  Outdoor:
+    view: yes
+    entities:
+      - group.outside
+      - group.weather
+  General:
+    - sensor.speedtest_download
+    - sensor.speedtest_ping
+    - sensor.speedtest_upload
+    - sensor.date__time
+  Weather:
+    - sensor.weather_summary
+    - sensor.weather_temperature
+    - sensor.weather_visibility
+    - sensor.weather_wind_speed
+    - sensor.weather_humidity   
+  Outside:
+    - switch.foutain
+    - light.garden
+  Kitchen:
+    - switch.kitchen
+    - sensor.temperature
+  Living Room:
+    - light.living_room
+    - sensor.temperature
+    - sensor.downstair
+  Bedroom1:
+    - light.bedroom_1
+    - sensor.upstair
+    - sensor.temperature_room_1
+  Bedroom2:
+    #- switch.bedroom_2_door
+    - light.bedroom_2
+    - sensor.upstair
+    - sensor.temperature_room_1
+  Rooftop:
+    - light.office
+    - light.garden
+    - sensor.temperature_room_2
+  #Door:
+  #  - rollershutter.garage_rollershutter
+  #  - switch.entrance_door
+  #  - switch.bedroom_1_door
+  #  - switch.bedroom_2_door

@@ -1,0 +1,10 @@
+- alias: FanOn
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.temperature
+    above: 30
+  action:
+    service: notify.IoT
+    data:
+      title: "Furnace fan is running"
+      message: "Fan running because current is {{ states.sensor.temperature.state }} amps"
