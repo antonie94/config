@@ -14,7 +14,7 @@ mqtt:
   #keepalive: 60
   #username: local
   #password: 123456
-  broker: localhost
+  broker: 192.168.0.99
   port: 1883
   client_id: AntonieIU_EE
   keepalive: 60
